@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post" action="/add_location">
+    {{ form.hidden_tag() }}
+    <P>
+        {{ form.lat.label }}
+        {{ form.lat() }}
+        {% for error in form.lat.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </P>
+    <P>
+        {{ form.lan.label }}
+        {{ form.lan() }}
+        {% for error in form.lan.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </P>
+    <P>
+        {{ form.timestamp.label }}
+        {{ form.timestamp() }}
+        {% for error in form.timestamp.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </P>
+    <P>
+        {{ form.user_id.label }}
+        {{ form.user_id() }}
+        {% for error in form.user_id.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </P>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
